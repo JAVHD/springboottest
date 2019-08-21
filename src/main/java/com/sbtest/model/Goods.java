@@ -1,4 +1,4 @@
-package java.com.sbtest.model;
+package com.sbtest.model;
 
 import java.math.BigDecimal;
 

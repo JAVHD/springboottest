@@ -1,6 +1,6 @@
-package java.com.sbtest.mapper;
+package com.sbtest.mapper;
 
-import java.com.sbtest.model.Goods;
+import com.sbtest.model.Goods;
 
 public interface GoodsMapper {
     int deleteByPrimaryKey(Integer id);

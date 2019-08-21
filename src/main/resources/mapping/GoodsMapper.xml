@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="main.java.com.sbtest.mapper.GoodsMapper">
-    <resultMap id="BaseResultMap" type="main.java.com.sbtest.model.Goods">
+<mapper namespace="com.sbtest.mapper.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.sbtest.model.Goods">
         <id column="id" property="id" jdbcType="INTEGER"/>
         <result column="bar_code" property="barCode" jdbcType="BIGINT"/>
         <result column="goods_name" property="goodsName" jdbcType="VARCHAR"/>
@@ -48,7 +48,7 @@
     delete from yc_goods
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" parameterType="main.java.com.sbtest.model.Goods">
+    <insert id="insert" parameterType="com.sbtest.model.Goods">
     insert into yc_goods (id, bar_code, goods_name, 
       brand, category, price, 
       item_price, origin, origin_id, 
@@ -70,7 +70,7 @@
       #{isDelete,jdbcType=BIT}, #{itemUnit,jdbcType=VARCHAR}, #{cat,jdbcType=VARCHAR}, 
       #{standards,jdbcType=VARCHAR}, #{costPrice,jdbcType=DECIMAL})
   </insert>
-    <insert id="insertSelective" parameterType="main.java.com.sbtest.model.Goods">
+    <insert id="insertSelective" parameterType="com.sbtest.model.Goods">
         insert into yc_goods
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -251,7 +251,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="main.java.com.sbtest.model.Goods">
+    <update id="updateByPrimaryKeySelective" parameterType="com.sbtest.model.Goods">
         update yc_goods
         <set>
             <if test="barCode != null">
@@ -341,7 +341,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="main.java.com.sbtest.model.Goods">
+    <update id="updateByPrimaryKey" parameterType="com.sbtest.model.Goods">
     update yc_goods
     set bar_code = #{barCode,jdbcType=BIGINT},
       goods_name = #{goodsName,jdbcType=VARCHAR},

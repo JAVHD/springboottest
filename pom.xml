@@ -45,7 +45,6 @@
         </dependency>
     </dependencies>
 
-    <!-- 这个插件，可以将应用打包成一个可执行的jar包；-->
     <build>
         <plugins>
             <!-- mybatis generator 自动生成代码插件 -->
@@ -59,6 +58,7 @@
                     <verbose>true</verbose>
                 </configuration>
             </plugin>
+            <!-- 这个插件，可以将应用打包成一个可执行的jar包；-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
