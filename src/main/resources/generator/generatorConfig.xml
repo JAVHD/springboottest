@@ -13,14 +13,17 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.10.13.76:3306/yaocao3"
-                        userId="root" password="9c527d7bad3427b1">
+        <!--        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.10.13.76:3306/yaocao3"-->
+        <!--                        userId="root" password="9c527d7bad3427b1">-->
+        <!--        </jdbcConnection>-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/ycbqdy"
+                        userId="root" password="root">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="main.java.com.sbtest.model" targetProject="src">
+        <javaModelGenerator targetPackage="com.sbtest.model" targetProject="src">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -29,11 +32,12 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="main.java.com.sbtest.mapper" targetProject="src">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.sbtest.mapper" targetProject="src">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-        <table tableName="yc_goods" domainObjectName="Goods" enableCountByExample="false" enableUpdateByExample="false"
+        <table tableName="yc_goods_district" domainObjectName="GoodsDistrict" enableCountByExample="false"
+               enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>
 </generatorConfiguration>

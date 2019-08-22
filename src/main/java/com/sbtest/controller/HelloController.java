@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
     @RequestMapping("/hello")
     public String hello() {
-        return "HelloController中的hello方法yyy";
+        return "HelloController中的hello方法zzz";
     }
 }

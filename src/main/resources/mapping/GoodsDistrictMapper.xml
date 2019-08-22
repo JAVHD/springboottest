@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sbtest.mapper.GoodsDistrictMapper">
+    <resultMap id="BaseResultMap" type="com.sbtest.model.GoodsDistrict">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="bar_code" property="barCode" jdbcType="VARCHAR"/>
+        <result column="create_id" property="createId" jdbcType="INTEGER"/>
+        <result column="goods_name" property="goodsName" jdbcType="VARCHAR"/>
+        <result column="province_id" property="provinceId" jdbcType="INTEGER"/>
+        <result column="city_id" property="cityId" jdbcType="INTEGER"/>
+        <result column="area_id" property="areaId" jdbcType="INTEGER"/>
+        <result column="add_time" property="addTime" jdbcType="INTEGER"/>
+        <result column="status" property="status" jdbcType="TINYINT"/>
+        <result column="delete_time" property="deleteTime" jdbcType="INTEGER"/>
+        <result column="standard" property="standard" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="DECIMAL"/>
+        <result column="price_clerk" property="priceClerk" jdbcType="VARCHAR"/>
+        <result column="periods_num" property="periodsNum" jdbcType="VARCHAR"/>
+        <result column="source" property="source" jdbcType="TINYINT"/>
+        <result column="unit" property="unit" jdbcType="TINYINT"/>
+        <result column="goods_date" property="goodsDate" jdbcType="INTEGER"/>
+        <result column="update_time" property="updateTime" jdbcType="INTEGER"/>
+        <result column="item_price" property="itemPrice" jdbcType="DECIMAL"/>
+        <result column="field1" property="field1" jdbcType="VARCHAR"/>
+        <result column="field2" property="field2" jdbcType="VARCHAR"/>
+        <result column="field3" property="field3" jdbcType="VARCHAR"/>
+        <result column="update_id" property="updateId" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, bar_code, create_id, goods_name, province_id, city_id, area_id, add_time, status, 
+    delete_time, standard, price, price_clerk, periods_num, source, unit, goods_date, 
+    update_time, item_price, field1, field2, field3, update_id
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from yc_goods_district
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yc_goods_district
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.sbtest.model.GoodsDistrict">
+    insert into yc_goods_district (id, bar_code, create_id, 
+      goods_name, province_id, city_id, 
+      area_id, add_time, status, 
+      delete_time, standard, price, 
+      price_clerk, periods_num, source, 
+      unit, goods_date, update_time, 
+      item_price, field1, field2, 
+      field3, update_id)
+    values (#{id,jdbcType=INTEGER}, #{barCode,jdbcType=VARCHAR}, #{createId,jdbcType=INTEGER}, 
+      #{goodsName,jdbcType=VARCHAR}, #{provinceId,jdbcType=INTEGER}, #{cityId,jdbcType=INTEGER}, 
+      #{areaId,jdbcType=INTEGER}, #{addTime,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, 
+      #{deleteTime,jdbcType=INTEGER}, #{standard,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{priceClerk,jdbcType=VARCHAR}, #{periodsNum,jdbcType=VARCHAR}, #{source,jdbcType=TINYINT}, 
+      #{unit,jdbcType=TINYINT}, #{goodsDate,jdbcType=INTEGER}, #{updateTime,jdbcType=INTEGER}, 
+      #{itemPrice,jdbcType=DECIMAL}, #{field1,jdbcType=VARCHAR}, #{field2,jdbcType=VARCHAR}, 
+      #{field3,jdbcType=VARCHAR}, #{updateId,jdbcType=INTEGER})
+  </insert>
+    <insert id="insertSelective" parameterType="com.sbtest.model.GoodsDistrict">
+        insert into yc_goods_district
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="barCode != null">
+                bar_code,
+            </if>
+            <if test="createId != null">
+                create_id,
+            </if>
+            <if test="goodsName != null">
+                goods_name,
+            </if>
+            <if test="provinceId != null">
+                province_id,
+            </if>
+            <if test="cityId != null">
+                city_id,
+            </if>
+            <if test="areaId != null">
+                area_id,
+            </if>
+            <if test="addTime != null">
+                add_time,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="deleteTime != null">
+                delete_time,
+            </if>
+            <if test="standard != null">
+                standard,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="priceClerk != null">
+                price_clerk,
+            </if>
+            <if test="periodsNum != null">
+                periods_num,
+            </if>
+            <if test="source != null">
+                source,
+            </if>
+            <if test="unit != null">
+                unit,
+            </if>
+            <if test="goodsDate != null">
+                goods_date,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="itemPrice != null">
+                item_price,
+            </if>
+            <if test="field1 != null">
+                field1,
+            </if>
+            <if test="field2 != null">
+                field2,
+            </if>
+            <if test="field3 != null">
+                field3,
+            </if>
+            <if test="updateId != null">
+                update_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="barCode != null">
+                #{barCode,jdbcType=VARCHAR},
+            </if>
+            <if test="createId != null">
+                #{createId,jdbcType=INTEGER},
+            </if>
+            <if test="goodsName != null">
+                #{goodsName,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceId != null">
+                #{provinceId,jdbcType=INTEGER},
+            </if>
+            <if test="cityId != null">
+                #{cityId,jdbcType=INTEGER},
+            </if>
+            <if test="areaId != null">
+                #{areaId,jdbcType=INTEGER},
+            </if>
+            <if test="addTime != null">
+                #{addTime,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=TINYINT},
+            </if>
+            <if test="deleteTime != null">
+                #{deleteTime,jdbcType=INTEGER},
+            </if>
+            <if test="standard != null">
+                #{standard,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="priceClerk != null">
+                #{priceClerk,jdbcType=VARCHAR},
+            </if>
+            <if test="periodsNum != null">
+                #{periodsNum,jdbcType=VARCHAR},
+            </if>
+            <if test="source != null">
+                #{source,jdbcType=TINYINT},
+            </if>
+            <if test="unit != null">
+                #{unit,jdbcType=TINYINT},
+            </if>
+            <if test="goodsDate != null">
+                #{goodsDate,jdbcType=INTEGER},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=INTEGER},
+            </if>
+            <if test="itemPrice != null">
+                #{itemPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="field1 != null">
+                #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                #{field3,jdbcType=VARCHAR},
+            </if>
+            <if test="updateId != null">
+                #{updateId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.sbtest.model.GoodsDistrict">
+        update yc_goods_district
+        <set>
+            <if test="barCode != null">
+                bar_code = #{barCode,jdbcType=VARCHAR},
+            </if>
+            <if test="createId != null">
+                create_id = #{createId,jdbcType=INTEGER},
+            </if>
+            <if test="goodsName != null">
+                goods_name = #{goodsName,jdbcType=VARCHAR},
+            </if>
+            <if test="provinceId != null">
+                province_id = #{provinceId,jdbcType=INTEGER},
+            </if>
+            <if test="cityId != null">
+                city_id = #{cityId,jdbcType=INTEGER},
+            </if>
+            <if test="areaId != null">
+                area_id = #{areaId,jdbcType=INTEGER},
+            </if>
+            <if test="addTime != null">
+                add_time = #{addTime,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=TINYINT},
+            </if>
+            <if test="deleteTime != null">
+                delete_time = #{deleteTime,jdbcType=INTEGER},
+            </if>
+            <if test="standard != null">
+                standard = #{standard,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DECIMAL},
+            </if>
+            <if test="priceClerk != null">
+                price_clerk = #{priceClerk,jdbcType=VARCHAR},
+            </if>
+            <if test="periodsNum != null">
+                periods_num = #{periodsNum,jdbcType=VARCHAR},
+            </if>
+            <if test="source != null">
+                source = #{source,jdbcType=TINYINT},
+            </if>
+            <if test="unit != null">
+                unit = #{unit,jdbcType=TINYINT},
+            </if>
+            <if test="goodsDate != null">
+                goods_date = #{goodsDate,jdbcType=INTEGER},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=INTEGER},
+            </if>
+            <if test="itemPrice != null">
+                item_price = #{itemPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="field1 != null">
+                field1 = #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                field2 = #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                field3 = #{field3,jdbcType=VARCHAR},
+            </if>
+            <if test="updateId != null">
+                update_id = #{updateId,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.sbtest.model.GoodsDistrict">
+    update yc_goods_district
+    set bar_code = #{barCode,jdbcType=VARCHAR},
+      create_id = #{createId,jdbcType=INTEGER},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=INTEGER},
+      city_id = #{cityId,jdbcType=INTEGER},
+      area_id = #{areaId,jdbcType=INTEGER},
+      add_time = #{addTime,jdbcType=INTEGER},
+      status = #{status,jdbcType=TINYINT},
+      delete_time = #{deleteTime,jdbcType=INTEGER},
+      standard = #{standard,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      price_clerk = #{priceClerk,jdbcType=VARCHAR},
+      periods_num = #{periodsNum,jdbcType=VARCHAR},
+      source = #{source,jdbcType=TINYINT},
+      unit = #{unit,jdbcType=TINYINT},
+      goods_date = #{goodsDate,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=INTEGER},
+      item_price = #{itemPrice,jdbcType=DECIMAL},
+      field1 = #{field1,jdbcType=VARCHAR},
+      field2 = #{field2,jdbcType=VARCHAR},
+      field3 = #{field3,jdbcType=VARCHAR},
+      update_id = #{updateId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
