@@ -31,6 +31,15 @@
     delete_time, standard, price, price_clerk, periods_num, source, unit, goods_date, 
     update_time, item_price, field1, field2, field3, update_id
   </sql>
+
+    <!-- 列表查询 -->
+    <select id="getList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from yc_goods_district
+        limit 10
+    </select>
+
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
@@ -123,7 +132,7 @@
                 field1,
             </if>
             <if test="field2 != null">
-                field2,
+                field2,selectByPrimaryKey
             </if>
             <if test="field3 != null">
                 field3,
