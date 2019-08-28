@@ -1,7 +1,9 @@
 package com.sbtest.mapper;
 
+import com.github.pagehelper.Page;
 import com.sbtest.model.GoodsDistrict;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -20,5 +22,5 @@ public interface GoodsDistrictMapper {
     int updateByPrimaryKey(GoodsDistrict record);
 
     //列表数据
-    List<GoodsDistrict> getList();
+    Page<GoodsDistrict> getList();
 }
