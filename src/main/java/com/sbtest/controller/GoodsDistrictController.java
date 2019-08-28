@@ -39,14 +39,14 @@ public class GoodsDistrictController {
 
     //商品列表数据
     @RequestMapping(value = "/getList", method = RequestMethod.GET)
-    public Page<GoodsDistrict> getList(@RequestParam(value = "page", defaultValue = "1", required = false) Integer page,
-                                       @RequestParam(value = "limit", defaultValue = "10", required = false) Integer limit) {
+    public Object getList(@RequestParam(value = "page", defaultValue = "1", required = false) Integer page,
+                          @RequestParam(value = "limit", defaultValue = "10", required = false) Integer limit) {
 
         PageHelper.startPage(page, limit);
         Page<GoodsDistrict> list = goodsDistrictMapper.getList();
 
-        //return ApiResultUtil.okList(list);
-        return list;
+        return ApiResultUtil.okList(list);
+        //return list;
     }
 
 
