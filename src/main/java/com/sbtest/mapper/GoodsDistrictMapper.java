@@ -20,5 +20,5 @@ public interface GoodsDistrictMapper {
     int updateByPrimaryKey(GoodsDistrict record);
 
     //列表数据
-    List<GoodsDistrict> getList(Integer page, Integer limit);
+    List<GoodsDistrict> getList();
 }

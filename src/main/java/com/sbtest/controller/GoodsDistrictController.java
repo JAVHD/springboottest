@@ -1,5 +1,6 @@
 package com.sbtest.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.sbtest.mapper.GoodsDistrictMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,9 +37,13 @@ public class GoodsDistrictController {
 
     //商品列表数据
     @RequestMapping(value = "/getList", method = RequestMethod.GET)
-    public List<GoodsDistrict> getList(@RequestParam(value = "page", required = false) Integer page,
-                                       @RequestParam(value = "limit", required = false) Integer limit) {
-        return goodsDistrictMapper.getList(page, limit);
+    public List<GoodsDistrict> getList(@RequestParam(value = "page", defaultValue = "1", required = false) Integer page,
+                                       @RequestParam(value = "limit", defaultValue = "10", required = false) Integer limit) {
+//        System.out.println(page);
+//        System.out.println(limit);
+
+        PageHelper.startPage(page, limit);
+        return goodsDistrictMapper.getList();
     }
 
 
