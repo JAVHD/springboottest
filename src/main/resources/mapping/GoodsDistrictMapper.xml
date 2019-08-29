@@ -25,6 +25,10 @@
         <result column="field2" property="field2" jdbcType="VARCHAR"/>
         <result column="field3" property="field3" jdbcType="VARCHAR"/>
         <result column="update_id" property="updateId" jdbcType="INTEGER"/>
+        <association property="goods" resultMap="com.sbtest.mapper.GoodsMapper.BaseResultMap">
+            <result column="name" property="name" jdbcType="VARCHAR"/>
+            <result column="brand" property="brand" jdbcType="VARCHAR"/>
+        </association>
     </resultMap>
     <sql id="Base_Column_List">
     id, bar_code, create_id, goods_name, province_id, city_id, area_id, add_time, status, 
@@ -34,9 +38,11 @@
 
     <!-- 列表查询 -->
     <select id="getList" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from yc_goods_district
+        SELECT
+        *
+        from yc_goods_district a
+        LEFT JOIN yc_goods b
+        ON a.bar_code = b.bar_code
     </select>
 
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">

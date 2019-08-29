@@ -1,7 +1,9 @@
 package com.sbtest.mapper;
 
 import com.sbtest.model.Goods;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface GoodsMapper {
     int deleteByPrimaryKey(Integer id);
 

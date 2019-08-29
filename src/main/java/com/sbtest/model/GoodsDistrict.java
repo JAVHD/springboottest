@@ -3,6 +3,9 @@ package com.sbtest.model;
 import java.math.BigDecimal;
 
 public class GoodsDistrict {
+
+    private Goods goods;
+
     private Integer id;
 
     private String barCode;
@@ -48,6 +51,14 @@ public class GoodsDistrict {
     private String field3;
 
     private Integer updateId;
+
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
 
     public Integer getId() {
         return id;
