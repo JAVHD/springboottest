@@ -3,6 +3,7 @@ package com.sbtest.controller;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.sbtest.mapper.GoodsDistrictMapper;
+import com.sbtest.service.GoodsDistrictService;
 import com.sbtest.util.ApiResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,27 +25,31 @@ import java.util.List;
 @RequestMapping("/manage/GoodsDistrict")
 public class GoodsDistrictController {
 
+    //@Autowired
+    //private GoodsDistrictMapper goodsDistrictMapper;
+
     @Autowired
-    private GoodsDistrictMapper goodsDistrictMapper;
+    private GoodsDistrictService goodsDistrictService;
 
     // @RequestMapping(value = "/getOne/id/{id}", method = RequestMethod.GET)
     // public GoodsDistrict getOne(@PathVariable("id") Integer id) {
     //     return goodsDistrictMapper.selectByPrimaryKey(id);
     // }
 
-    @RequestMapping(value = "/getOne", method = RequestMethod.GET)
-    public GoodsDistrict getOne(@RequestParam(value = "id", required = true) Integer id) {
-        return goodsDistrictMapper.selectByPrimaryKey(id);
-    }
+//    @RequestMapping(value = "/getOne", method = RequestMethod.GET)
+//    public GoodsDistrict getOne(@RequestParam(value = "id", required = true) Integer id) {
+//        return goodsDistrictMapper.selectByPrimaryKey(id);
+//    }
 
     //商品列表数据
     @RequestMapping(value = "/getList", method = RequestMethod.GET)
     public Object getList(@RequestParam(value = "page", defaultValue = "1", required = false) Integer page,
                           @RequestParam(value = "limit", defaultValue = "10", required = false) Integer limit) {
 
-        PageHelper.startPage(page, limit);
-        Page<GoodsDistrict> list = goodsDistrictMapper.getList();
+//        PageHelper.startPage(page, limit);
+//        Page<GoodsDistrict> list = goodsDistrictMapper.getList();
 
+        Page<GoodsDistrict> list = goodsDistrictService.getList(page, limit);
         return ApiResultUtil.okList(list);
         //return list;
     }
