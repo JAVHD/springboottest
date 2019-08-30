@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class GoodsDistrict {
 
-    private Goods goods;
+    //private Goods goods;
 
     private Integer id;
 
@@ -52,13 +52,39 @@ public class GoodsDistrict {
 
     private Integer updateId;
 
-    public Goods getGoods() {
-        return goods;
+    // public Goods getGoods() {
+    //     return goods;
+    // }
+
+    // public void setGoods(Goods goods) {
+    //     this.goods = goods;
+    // }
+
+
+    private String name;
+
+    private String brand;
+
+    //********分割线*************
+
+
+    public String getBrand() {
+        return brand;
     }
 
-    public void setGoods(Goods goods) {
-        this.goods = goods;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    //***********分割线************
 
     public Integer getId() {
         return id;
