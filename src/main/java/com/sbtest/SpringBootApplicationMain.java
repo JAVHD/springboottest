@@ -16,7 +16,7 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
  * @SpringBootApplication：标注一个主程序类，用来标明这是一个Spring Boot应用
  */
 @SpringBootApplication
-@MapperScan("com.sbtest.mapper")
+//@MapperScan("com.sbtest.mapper")
 public class SpringBootApplicationMain {
 
 //    @Bean

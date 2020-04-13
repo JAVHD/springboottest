@@ -1,6 +1,7 @@
 package com.sbtest.dao;
 
 import com.sbtest.entity.YcArticle;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
  * @author makejava
  * @since 2020-04-06 09:34:28
  */
+
+@Mapper
 public interface YcArticleDao {
 
     /**

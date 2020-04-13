@@ -1,6 +1,7 @@
 package com.sbtest.dao;
 
 import com.sbtest.entity.YcGoods;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
  * @author makejava
  * @since 2020-04-06 00:24:18
  */
+
+@Mapper
 public interface YcGoodsDao {
 
     /**
